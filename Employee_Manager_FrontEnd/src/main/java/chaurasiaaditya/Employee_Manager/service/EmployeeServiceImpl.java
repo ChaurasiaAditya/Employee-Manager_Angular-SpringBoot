@@ -7,9 +7,12 @@
  */
 package chaurasiaaditya.Employee_Manager.service;
 
+import chaurasiaaditya.Employee_Manager.domain.Employee;
 import chaurasiaaditya.Employee_Manager.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.UUID;
 
 @Service
 public class EmployeeServiceImpl {
@@ -18,5 +21,10 @@ public class EmployeeServiceImpl {
 	@Autowired
 	public EmployeeServiceImpl(EmployeeRepository employeeRepository) {
 		this.employeeRepository = employeeRepository;
+	}
+
+	public Employee addEmployee(Employee employee) {
+		employee.setEmployeeCode(UUID.randomUUID().toString());
+		return employeeRepository.save(employee);
 	}
 }
