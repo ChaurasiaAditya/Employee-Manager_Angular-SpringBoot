@@ -24,4 +24,6 @@ public class Employee implements Serializable {
 	@Column(nullable = false, updatable = false)
 	private String employeeCode;
 
+	public Employee() {
+	}
 }
