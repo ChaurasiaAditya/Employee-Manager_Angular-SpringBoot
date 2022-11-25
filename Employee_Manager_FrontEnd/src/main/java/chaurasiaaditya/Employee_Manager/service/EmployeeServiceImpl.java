@@ -32,4 +32,8 @@ public class EmployeeServiceImpl {
 	public List<Employee> getAllEmployee() {
 		return employeeRepository.findAll();
 	}
+
+	public Employee updateEmployee(Employee employee) {
+		return employeeRepository.save(employee);
+	}
 }
