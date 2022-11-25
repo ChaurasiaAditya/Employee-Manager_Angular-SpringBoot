@@ -1,4 +1,8 @@
 package chaurasiaaditya.Employee_Manager.repository;
 
-public interface EmployeeRepository {
+import chaurasiaaditya.Employee_Manager.domain.Employee;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 }
+
