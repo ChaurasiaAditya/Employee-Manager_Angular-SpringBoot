@@ -36,4 +36,9 @@ public class EmployeeServiceImpl {
 	public Employee updateEmployee(Employee employee) {
 		return employeeRepository.save(employee);
 	}
+
+	public String deleteEmployee(long id) {
+		employeeRepository.deleteById(id);
+		return "Employee Deleted Successful";
+	}
 }
