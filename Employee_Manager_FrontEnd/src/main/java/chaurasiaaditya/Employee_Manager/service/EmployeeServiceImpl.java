@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -35,6 +36,10 @@ public class EmployeeServiceImpl {
 
 	public Employee updateEmployee(Employee employee) {
 		return employeeRepository.save(employee);
+	}
+
+	public Optional<Employee> findById(long id) {
+		return employeeRepository.findById(id);
 	}
 
 	public String deleteEmployee(long id) {
