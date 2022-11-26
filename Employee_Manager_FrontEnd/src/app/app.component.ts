@@ -12,6 +12,8 @@ export class AppComponent implements OnInit {
   title = 'EmployeeManager';
 
   employees: Employee[] = [];
+  
+  
 
   constructor(private emplyeeService: EmployeeService) { }
 
@@ -22,7 +24,7 @@ export class AppComponent implements OnInit {
   public getEmployees(): void {
     this.emplyeeService.getEmployees().subscribe(
       {
-        next: (response: Employee[]) => { this.employees = response; },
+        next: (data:Employee[]) => { this.employees = data; },
         error: (error: HttpErrorResponse) => { alert(error.message); }
       }
     )

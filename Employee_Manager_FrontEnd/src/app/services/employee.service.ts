@@ -8,24 +8,24 @@ import { Employee } from '../model/employee';
 })
 export class EmployeeService {
 
-  private apiUrl = 'http://localhost:8080/api/employees';
+  private apiUrl = 'http://localhost:8080/api/v1';
 
   constructor(private http: HttpClient) { }
 
   public getEmployees(): Observable<Employee[]> {
-    return this.http.get<Employee[]>(`${this.apiUrl}/api/v1/all`);
+    return this.http.get<Employee[]>(`${this.apiUrl}/all`);
   }
 
   public addEmployees(employee: Employee): Observable<Employee> {
-    return this.http.post<Employee>(`${this.apiUrl}/api/v1/add`, employee);
+    return this.http.post<Employee>(`${this.apiUrl}/add`, employee);
   }
 
   public updateEmployees(employee: Employee): Observable<Employee> {
-    return this.http.put<Employee>(`${this.apiUrl}/api/v1/update`, employee);
+    return this.http.put<Employee>(`${this.apiUrl}/update`, employee);
   }
 
   public deleteEmployees(employeeId: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/api/v1/delete/${employeeId}`);
+    return this.http.delete<void>(`${this.apiUrl}/delete/${employeeId}`);
   }
 
 }
