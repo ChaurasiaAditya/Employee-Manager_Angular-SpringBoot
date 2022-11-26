@@ -7,14 +7,13 @@
  */
 package chaurasiaaditya.Employee_Manager.controller;
 
+import chaurasiaaditya.Employee_Manager.domain.Employee;
 import chaurasiaaditya.Employee_Manager.exception.UserNotFoundException;
 import chaurasiaaditya.Employee_Manager.service.EmployeeServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("api/v1")
@@ -26,7 +25,7 @@ public class EmployeeController {
 		this.employeeService = employeeService;
 	}
 
-	@GetMapping("getallemployees")
+	@GetMapping("all")
 	public ResponseEntity<?> getAllEmployee() {
 		return ResponseEntity.ok(employeeService.getAllEmployee());
 	}
@@ -38,5 +37,10 @@ public class EmployeeController {
 		} catch (UserNotFoundException exception) {
 			throw new RuntimeException(exception);
 		}
+	}
+
+	@PostMapping("add")
+	public ResponseEntity<?> addEmployee(@RequestBody Employee employee) {
+		return new ResponseEntity<>(employeeService.addEmployee(employee), HttpStatus.CREATED);
 	}
 }
