@@ -11,7 +11,7 @@ public interface EmployeeService {
 
 	List<Employee> getAllEmployee();
 
-	Employee updateEmployee(Employee employee);
+	Employee updateEmployee(Employee employee, long id);
 
 	Optional<Employee> findById(long id) throws UserNotFoundException;
 

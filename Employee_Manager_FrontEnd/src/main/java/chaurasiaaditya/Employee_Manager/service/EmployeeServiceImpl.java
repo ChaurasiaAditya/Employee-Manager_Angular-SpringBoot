@@ -38,8 +38,28 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	@Override
-	public Employee updateEmployee(Employee employee) {
-		return employeeRepository.save(employee);
+	public Employee updateEmployee(Employee employee, long id) {
+		Optional<Employee> optionalEmployee = this.employeeRepository.findById(id);
+		if (optionalEmployee.isEmpty()) {
+			return null;
+		}
+		Employee existingEmployee = optionalEmployee.get();
+		if (employee.getName() != null) {
+			existingEmployee.setName(employee.getName());
+		}
+		if (employee.getEmail() != null) {
+			existingEmployee.setEmail(employee.getEmail());
+		}
+		if (employee.getJobTitle() != null) {
+			existingEmployee.setJobTitle(employee.getJobTitle());
+		}
+		if (employee.getPhone() != null) {
+			existingEmployee.setPhone(employee.getPhone());
+		}
+		if (employee.getImageUrl() != null) {
+			existingEmployee.setImageUrl(employee.getImageUrl());
+		}
+		return employeeRepository.save(existingEmployee);
 	}
 
 	@Override
