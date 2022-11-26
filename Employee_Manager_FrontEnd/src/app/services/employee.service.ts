@@ -24,8 +24,8 @@ export class EmployeeService {
     return this.http.put<Employee>(`${this.apiUrl}/api/v1/update`, employee);
   }
 
-  public deleteEmployees(employeeId: number): Observable<Employee> {
-    return this.http.delete<Employee>(`${this.apiUrl}/api/v1/delete/${employeeId}`);
+  public deleteEmployees(employeeId: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/api/v1/delete/${employeeId}`);
   }
 
 }
