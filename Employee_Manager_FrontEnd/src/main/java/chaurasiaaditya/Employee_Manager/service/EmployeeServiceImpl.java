@@ -8,6 +8,7 @@
 package chaurasiaaditya.Employee_Manager.service;
 
 import chaurasiaaditya.Employee_Manager.domain.Employee;
+import chaurasiaaditya.Employee_Manager.exception.UserNotFoundException;
 import chaurasiaaditya.Employee_Manager.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -42,7 +43,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	@Override
-	public Optional<Employee> findById(long id) {
+	public Optional<Employee> findById(long id) throws UserNotFoundException {
 		return employeeRepository.findById(id);
 	}
 
