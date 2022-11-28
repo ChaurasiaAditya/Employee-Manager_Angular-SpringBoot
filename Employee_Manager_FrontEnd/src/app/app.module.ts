@@ -8,12 +8,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashBoardComponent } from "./dash-board/dash-board.component";
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
+import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashBoardComponent,
-    LoginComponent
+    LoginComponent,
+    EmployeeDetailComponent
   ],
   providers: [],
   bootstrap: [AppComponent],

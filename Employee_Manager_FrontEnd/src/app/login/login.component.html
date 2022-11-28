@@ -1,1 +1,13 @@
-<p>login works!</p>
+<form>
+    <div>
+        Enter Username
+        <input type="text" name="username" [(ngModel)]="username">
+    </div>
+    <div>
+        Enter password
+        <input type="text" name="password" [(ngModel)]="password">
+    </div>
+</form>
+<div>
+    <button class="button" color="primary" mat-button mat-raised-button (click)="loginfun()">Log In</button>
+</div>
