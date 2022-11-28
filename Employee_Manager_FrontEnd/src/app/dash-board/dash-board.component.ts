@@ -11,8 +11,14 @@ import { EmployeeService } from '../services/employee.service';
 export class DashBoardComponent implements OnInit {
 
   employees: Employee[] = [];
-  
-  
+
+  addEmployee: Employee = {};
+
+  addEmloyee() {
+    this.emplyeeService.addEmployees(this.addEmployee).subscribe({
+      next: () => alert("employee Added successfully")
+    });
+  }
 
   constructor(private emplyeeService: EmployeeService) { }
 
@@ -21,12 +27,10 @@ export class DashBoardComponent implements OnInit {
   }
 
   public getEmployees(): void {
-    this.emplyeeService.getEmployees().subscribe(
-      {
-        next: (data:Employee[]) => { this.employees = data; },
-        error: (error: HttpErrorResponse) => { alert(error.message); }
-      }
-    )
+    this.emplyeeService.getEmployees().subscribe({
+      next: (data: Employee[]) => { this.employees = data; },
+      error: (error: HttpErrorResponse) => { alert(error.message); }
+    })
   };
 
 }
