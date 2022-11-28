@@ -23,11 +23,12 @@ public class Employee implements Serializable {
 	private String imageUrl;
 	@Column(nullable = false, updatable = false)
 	private String employeeCode;
+	private String employeePassword;
 
 	public Employee() {
 	}
 
-	public Employee(Long id, String name, String email, String jobTitle, String phone, String imageUrl, String employeeCode) {
+	public Employee(Long id, String name, String email, String jobTitle, String phone, String imageUrl, String employeeCode, String employeePassword) {
 		this.id = id;
 		this.name = name;
 		this.email = email;
@@ -35,10 +36,23 @@ public class Employee implements Serializable {
 		this.phone = phone;
 		this.imageUrl = imageUrl;
 		this.employeeCode = employeeCode;
+		this.employeePassword = employeePassword;
 	}
 
 	public Long getId() {
 		return id;
+	}
+
+	public String getEmployeeCode() {
+		return employeeCode;
+	}
+
+	public String getEmployeePassword() {
+		return employeePassword;
+	}
+
+	public void setEmployeePassword(String employeePassword) {
+		this.employeePassword = employeePassword;
 	}
 
 	public void setId(Long id) {
@@ -99,6 +113,7 @@ public class Employee implements Serializable {
 			", phone='" + phone + '\'' +
 			", imageUrl='" + imageUrl + '\'' +
 			", employeeCode='" + employeeCode + '\'' +
+			", employeePassword='" + employeePassword + '\'' +
 			'}';
 	}
 }

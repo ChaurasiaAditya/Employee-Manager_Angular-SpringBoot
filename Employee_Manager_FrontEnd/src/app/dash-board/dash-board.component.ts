@@ -20,6 +20,13 @@ export class DashBoardComponent implements OnInit {
     });
   }
 
+  deleteEmp(id : number){
+    this.emplyeeService.deleteEmployees(id).subscribe({
+      next: () => alert("Employee Deleted SUccessfully")
+    })
+
+  }
+
   constructor(private emplyeeService: EmployeeService) { }
 
   ngOnInit(): void {
