@@ -9,13 +9,15 @@ import { DashBoardComponent } from "./dash-board/dash-board.component";
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
+import { AddEmployeeComponent } from './add-employee/add-employee.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashBoardComponent,
     LoginComponent,
-    EmployeeDetailComponent
+    EmployeeDetailComponent,
+    AddEmployeeComponent
   ],
   providers: [],
   bootstrap: [AppComponent],
