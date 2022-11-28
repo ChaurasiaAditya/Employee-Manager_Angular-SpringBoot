@@ -12,13 +12,6 @@ export class DashBoardComponent implements OnInit {
 
   employees: Employee[] = [];
 
-  addEmployee: Employee = {};
-
-  addEmloyee() {
-    this.emplyeeService.addEmployees(this.addEmployee).subscribe({
-      next: () => alert("employee Added successfully")
-    });
-  }
 
   deleteEmp(id : number){
     this.emplyeeService.deleteEmployees(id).subscribe({
