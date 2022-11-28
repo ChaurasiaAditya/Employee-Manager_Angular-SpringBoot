@@ -54,4 +54,9 @@ public class EmployeeController {
 	public ResponseEntity<?> updateEmployee(@RequestBody Employee employee,@PathVariable long id) {
 		return ResponseEntity.ok(employeeService.updateEmployee(employee, id));
 	}
+
+	@GetMapping("login/{email}/{password}")
+	public ResponseEntity<?> login(@PathVariable String email, @PathVariable String password) {
+		return ResponseEntity.ok(employeeService.getEmployeeByEmailAndEmployeePassword(email,password));
+	}
 }

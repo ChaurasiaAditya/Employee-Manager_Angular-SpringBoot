@@ -23,7 +23,11 @@
                     <li class="list-group-item"><i class="fa fa-phone float-right"></i>Phone : {{employee?.phone}}</li>
                 </ul>
                 <div class="card-body">
+
                     <div class="float-right btn-group btn-group-sm">
+                        <button  data-dismiss="modal" class="btn btn-primary" > <a routerLink="./employee/{{employee.id}}"> View Details</a></button>
+
+
                         <a href="#" class="btn btn-primary tooltips" data-placement="top" data-toggle="tooltip"
                             data-original-title="Edit"><i class="fa fa-pencil"></i> </a>
                         <button href="#" class="btn btn-secondary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Delete" (click)="deleteEmp(employee?.id!)"><i class="fa fa-times"></i></button>

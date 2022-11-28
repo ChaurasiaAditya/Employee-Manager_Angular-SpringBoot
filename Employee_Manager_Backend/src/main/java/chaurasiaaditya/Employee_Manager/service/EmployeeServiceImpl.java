@@ -72,4 +72,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 		employeeRepository.deleteById(id);
 		return "Employee Deleted Successful";
 	}
+
+	@Override
+	public Employee getEmployeeByEmailAndEmployeePassword(String email, String password) {
+		return this.employeeRepository.getEmployeeByEmailAndEmployeePassword(email,password);
+	}
 }

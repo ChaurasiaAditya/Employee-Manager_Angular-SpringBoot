@@ -16,4 +16,6 @@ public interface EmployeeService {
 	Optional<Employee> findById(long id) throws UserNotFoundException;
 
 	String deleteEmployee(long id);
+
+	Employee getEmployeeByEmailAndEmployeePassword(String email, String password);
 }
