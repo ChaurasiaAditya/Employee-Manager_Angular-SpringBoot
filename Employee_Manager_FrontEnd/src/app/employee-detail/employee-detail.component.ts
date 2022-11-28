@@ -14,12 +14,21 @@ export class EmployeeDetailComponent implements OnInit {
 
   constructor(private employeeService: EmployeeService, private activateRoute:ActivatedRoute) { }
 
+  email:String = "";
+  password:String = "";
+
+  login() {
+    this.employeeService.loginEmployee(this.email,this.password).subscribe({
+      next: (data)=> this.employee = data })
+    }
+
 
 
   ngOnInit(): void {
     this.activateRoute.paramMap.subscribe(params=>{
-      let id = params.get("id")??0;
-      this.employeeService.getEmployeeById(+id).subscribe(
+      let email = params.get("email")??"";
+      let password = params.get("employeePassword")??"";
+      this.employeeService.loginEmployee(email,password).subscribe(
         data => {this.employee = data;}
       )
     })

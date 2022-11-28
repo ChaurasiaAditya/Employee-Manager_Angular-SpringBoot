@@ -4,7 +4,7 @@ import { EmployeeDetailComponent } from './employee-detail/employee-detail.compo
 
 const routes: Routes = [
   {
-    path:"employee/:id",
+    path:"employee/:email/:password",
     component:EmployeeDetailComponent
   }
 ];

@@ -16,7 +16,7 @@ export class EmployeeService {
     return this.http.get<Employee[]>(`${this.apiUrl}/all`);
   }
 
-  public getEmployeeById(id: number):Observable<Employee> {
+  public getEmployeeById(id: number): Observable<Employee> {
     return this.http.get<Employee>(`${this.apiUrl}/find/${id}`);
   }
 
@@ -30,6 +30,10 @@ export class EmployeeService {
 
   public deleteEmployees(employeeId: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/delete/${employeeId}`);
+  }
+
+  public loginEmployee(email: String, password: String): Observable<Employee> {
+    return this.http.get<Employee>(`${this.apiUrl}/login/${email}/${password}`);
   }
 
 }
