@@ -7,11 +7,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashBoardComponent } from "./dash-board/dash-board.component";
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashBoardComponent
+    DashBoardComponent,
+    LoginComponent
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -24,7 +24,6 @@ export class DashBoardComponent implements OnInit {
     this.emplyeeService.deleteEmployees(id).subscribe({
       next: () => alert("Employee Deleted SUccessfully")
     })
-
   }
 
   constructor(private emplyeeService: EmployeeService) { }

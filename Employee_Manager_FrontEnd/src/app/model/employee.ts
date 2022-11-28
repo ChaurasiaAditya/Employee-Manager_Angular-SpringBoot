@@ -6,4 +6,5 @@ export interface Employee {
     jobTitle?: string;
     imageUrl?: string;
     employeeCode?: string;
+    employeePassword?: string
 }

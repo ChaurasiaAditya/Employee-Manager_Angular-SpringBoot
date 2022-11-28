@@ -1,5 +1,7 @@
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
+<!-- Login -->
+
 
 <!-- View Employee -->
 <div class="container">
@@ -50,6 +52,10 @@
                 <div class="form-group">
                   <label for="name">Email</label>
                   <input matInput type="text" name="title" #title="ngModel" [(ngModel)]="addEmployee.email" required minlength="4" class="form-control" placeholder="Email">
+                </div>
+                <div class="form-group">
+                  <label for="name">Password</label>
+                  <input matInput type="text" name="title" #title="ngModel" [(ngModel)]="addEmployee.employeePassword" required minlength="4" class="form-control" placeholder="Email">
                 </div>
                 <div class="form-group">
                    <label for="phone">Job title</label>
